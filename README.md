@@ -12,6 +12,6 @@ The newest template of thesis for UCAS.
 - 参考文献放在附录的前面；
 - 公式编号不会在比chapter低的章节(如section)内刷新。
 
-如果遇到生僻字无法显示的问题见[链接](https://github.com/mohuangrui/ucasthesis/wiki/%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE)
+如果遇到生僻字无法显示的问题见[链接](https://github.com/mohuangrui/ucasthesis/wiki/%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE)。
 
 如有新的bug或者还有哪里不符合国科大最新版毕业论文要求的地方，欢迎向我报错，请联系guoxiao@nao.cas.cn或guoxiao17@mails.ucas.ac.cn也欢迎大家修正或维护我更新的模板。
