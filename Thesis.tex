@@ -1,0 +1,171 @@
+%---------------------------------------------------------------------------%
+%-                                                                         -%
+%-                           LaTeX Template                                -%
+%-                                                                         -%
+%---------------------------------------------------------------------------%
+%- Copyright (C) Huangrui Mo <huangrui.mo@gmail.com> 
+%- This is free software: you can redistribute it and/or modify it
+%- under the terms of the GNU General Public License as published by
+%- the Free Software Foundation, either version 3 of the License, or
+%- (at your option) any later version.
+%---------------------------------------------------------------------------%
+%->> Document class declaration
+%---------------------------------------------------------------------------%
+\documentclass[twoside,fontsize=none]{Style/ucasthesis}%
+%- Multiple optional arguments:
+%- [<oneside|twoside|print>]% oneside eprint, twoside eprint, or paper print
+%- [fontset=<adobe|none|...>]% specify font set instead of automatic detection
+%- [scheme=plain]% thesis writing of international students
+%- [draftversion]% show draft version information
+%- [standard options for ctex book class: draft|paper size|font size|...]%
+%---------------------------------------------------------------------------%
+%->> Document settings
+%---------------------------------------------------------------------------%
+\usepackage[authoryear,list]{Style/artratex}% document settings
+%- usage: \usepackage[option1,option2,...,optionN]{artratex}
+%- Multiple optional arguments:
+%- [bibtex|biber]% set bibliography processor and package
+%- [<numbers|super|authoryear|alpha>]% set citation and reference style
+%- <numbers>: textual: Jones [1]; parenthetical: [1]
+%- <super>: textual: Jones superscript [1]; parenthetical: superscript [1]
+%- <authoryear>: textual: Jones (1995); parenthetical: (Jones, 1995)
+%- <alpha>: textual: not available; parenthetical: [Jon95]
+%- [geometry]% reconfigure page layout via geometry package
+%- [lscape]% provide landscape layout environment
+%- [xhf]% disable header and footer via fancyhdr package
+%- [color]% provide color support via xcolor package
+%- [background]% enable page background
+%- [tikz]% provide complex diagrams via tikz package
+%- [table]% provide complex tables via ctable package
+%- [list]% provide enhanced list environments for algorithm and coding
+%- [math]% enable some extra math packages
+%- [xlink]% disable link colors
+\usepackage{Style/artracom}% user defined commands
+\usepackage{multirow}
+\usepackage[figuresright]{rotating}
+\usepackage{threeparttable}
+%\usepackage{zhnumber}
+
+%期刊名定义
+\newcommand{\mnras}{Mon. Not. R. Astron. Soc.}
+\newcommand{\jcap}{J. Cosmol. Astropart. P.}
+\newcommand{\aap}{Astron. Astrophys.}
+\newcommand{\apj}{Astrophys. J.}
+\newcommand{\apjl}{Astrophys. J. Lett.}
+\newcommand{\aj}{Astron. J.}
+\newcommand{\prd}{Phys. Rev. D} 
+\newcommand{\prl}{Phys. Rev. Lett.} 
+\newcommand{\nat}{Nature} 
+\newcommand{\baas}{B. Amer. Astron. Soc.}
+\newcommand{\sovast}{Soviet Astronomy}
+\newcommand{\araa}{Annu. Rev. Astron. Astr.}
+
+\def\figurename{}
+\def\tablename{}
+
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thefigure}{图~\thechapter-\arabic{figure}}
+\renewcommand{\thetable}{表~\thechapter-\arabic{table}}
+\renewcommand{\theequation}{\thechapter-\arabic{equation}}
+
+
+
+
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\def\arcdeg{^\circ}
+
+%\ctexset{chapter={name={第},number=\chinese{chapter}},}
+%\ctexset{appendix={name={附,},number=\chinese{chapter}},}
+
+%---------------------------------------------------------------------------%
+%->> Document inclusion
+%---------------------------------------------------------------------------%
+%\includeonly{Tex/Chap_1,...,Tex/Chap_N}% selected files compilation
+%---------------------------------------------------------------------------%
+%->> Document content
+%---------------------------------------------------------------------------%
+%-
+%-> Titlepage information
+%-
+\input{Tex/Frontinfo}%
+\begin{document}
+%-
+%-> Frontmatter: title page, abstract, content list, symbol list, preface
+%-
+\frontmatter% initialize the environment
+\input{Tex/Frontmatter}% title page, abstract
+
+{% content list region
+\linespread{1.25}% local line space
+\intobmk*{\cleardoublepage}{\contentsname}% add link to bookmark
+\tableofcontents% content catalog
+
+\input{Tex/figuretable}
+
+%\markright{图表目录}
+}
+
+\input{Tex/Prematter}% symbol list, preface content
+%-
+%-> Mainmatter
+%-
+\mainmatter% initialize the environment
+
+
+\input{Tex/Mainmatter}% main content
+
+
+%\renewcommand\thechapter{\zhnum{chapter}}
+
+
+\intotoc*{\cleardoublepage}{\bibname}% add link to toc
+\bibliography{Biblio/ref}% bibliography
+%\artxifstreq{\artxbib}{bibtex}{% enable bibtex
+%    \bibliography{Biblio/ref}% bibliography
+%}{\printbibliography% bibliography
+%}
+%-
+%-> Appendix
+%-
+\cleardoublepage%
+\appendix% initialize the environment
+%\renewcommand\thechapter{\zhnum{chapter}}
+\renewcommand{\thechapter}{\bf 附\arabic{chapter}}
+
+%\def\figurename{附图}
+%\def\tablename{附表}
+
+
+\renewcommand{\thefigure}{附图~\arabic{chapter}-\arabic{figure}}
+\renewcommand{\thetable}{附表~\arabic{chapter}-\arabic{table}}
+%\let\oldfigurename\figurename%
+%\let\oldtablename\tablename%
+%\renewcommand{\theequation}{附\thechapter-\arabic{equation}}
+\input{Tex/Appendix}% appendix content
+
+%\fancypagestyle{appendixheader}{
+%  \fancyhf{}
+%  \fancyhead[C]{\footnotesize 附录}
+%  \fancyfoot[C]{\footnotesize \thepage}% page number
+%    \renewcommand{\headrulewidth}{0.8pt}% header rule
+%    \renewcommand{\footrulewidth}{0pt}% footer rule
+%}
+%\thispagestyle{appendixheader}
+
+
+
+
+
+%-> Backmatter: bibliography, glossary, index
+%-
+\cleardoublepage%
+\backmatter% initialize the environment
+\input{Tex/Backmatter}% other information
+
+
+\end{document}
+%---------------------------------------------------------------------------%
+
