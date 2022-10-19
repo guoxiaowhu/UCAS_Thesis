@@ -1,7 +1,7 @@
 # UCAS_Thesis
 The newest template of thesis for UCAS.
 
-鉴于国科大提供的最新模板有bug，根据国科大最新版的毕业论文写作要求修改原先模板得到最新的模板，最后得到该模板。
+鉴于国科大提供的最新模板有bug，根据国科大最新版的毕业论文写作要求(2023年开始使用)修改[原先国科大模板](https://github.com/mohuangrui/ucasthesis)得到最新的模板，最后得到该模板。
 
 修订了以下问题或有以下更新：
 - 英文参考文献省略多个作者应用 et al 而不是“等”；
