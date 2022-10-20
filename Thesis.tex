@@ -134,10 +134,9 @@
 \appendix% initialize the environment
 %\renewcommand\thechapter{\zhnum{chapter}}
 \renewcommand{\thechapter}{附\arabic{chapter}}
-
+{\renewcommand{\leftmark}{附\quad录}
 %\def\figurename{附图}
 %\def\tablename{附表}
-
 
 \renewcommand{\thefigure}{附图~\arabic{chapter}-\arabic{figure}}
 \renewcommand{\thetable}{附表~\arabic{chapter}-\arabic{table}}
@@ -145,7 +144,7 @@
 %\let\oldtablename\tablename%
 %\renewcommand{\theequation}{附\thechapter-\arabic{equation}}
 \input{Tex/Appendix}% appendix content
-
+}
 %\fancypagestyle{appendixheader}{
 %  \fancyhf{}
 %  \fancyhead[C]{\footnotesize 附录}
