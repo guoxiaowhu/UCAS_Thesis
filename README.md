@@ -11,7 +11,8 @@ The newest template of thesis for UCAS.
 - 附录中的图表名称全改为“附图”和“附表”，为了使得“附图”和“附表”能显示在图表目录里，只能将“附图1-1”一起定义为该图的标签(\thefigure)，并定义图的前缀\figurename为空，引用时直接“见\ref{fig:label}”即可，无需再写“见图~\ref{fig:label}”；表类似。因此本模板不支持双语的caption；
 - 参考文献放在附录的前面；
 - 公式编号不会在比chapter低的章节(如section)内刷新。
-- 附录的奇数页页眉改为“附\quad录”, 在附录前加上\renewcommand{\leftmark}{附\quad录}。 
+- 附录的奇数页页眉改为“附\quad录”, 在附录前加上\renewcommand{\leftmark}{附\quad录}。
+- 图表的编号与caption内容之间间隔一个汉字的大小，在文档开始加上\usepackage{caption} \captionsetup{labelsep=quad}.
 
 ## 其他常见问题
 - 如果遇到生僻字无法显示的问题见[链接](https://github.com/mohuangrui/ucasthesis/wiki/%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE)。
