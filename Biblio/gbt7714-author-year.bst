@@ -177,7 +177,7 @@ FUNCTION {bbl.space}
 }
 
 FUNCTION {bbl.and}
-{ "" }
+{ "\,\&\," }
 
 FUNCTION {bbl.et.al}
 { entry.lang lang.zh =
@@ -642,6 +642,7 @@ FUNCTION {format.names}
     }
   while$
 }
+
 
 FUNCTION {format.key}
 { empty$
