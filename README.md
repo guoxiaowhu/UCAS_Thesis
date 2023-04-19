@@ -20,7 +20,7 @@ The newest template of thesis for UCAS.
 
 ## 其他常见问题
 - 如果遇到生僻字无法显示的问题见[链接](https://github.com/mohuangrui/ucasthesis/wiki/%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE)。
-- 如果图表的caption太长，不想在目录中显示，可以把caption改为\caption\[ 目录显示的\]{长的描述}
+- 如果图表的caption太长，不想在目录中显示，可以把caption改为\caption\[ 目录中显示的标题\]{文中显示的很长的描述}
 
 其他问题还可以参见[https://github.com/mohuangrui/ucasthesis/wiki/](https://github.com/mohuangrui/ucasthesis/wiki/)
 
